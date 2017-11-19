@@ -1,0 +1,96 @@
+﻿.firstflight {
+    border: 1px solid black;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    background-color: red;
+}
+
+.fflocation {
+    float: left;
+    padding-left: 15px;
+}
+
+.ffdates {
+    float: right;
+    text-align: right;
+    padding-right: 60px;
+}
+
+.searchresult table {
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .searchresult table tr td {
+        padding: 5px;
+        border-bottom: 1px solid black;
+    }
+
+#firstcolumn {
+    width: 10%;
+    text-align: left;
+    padding: 5px;
+    padding-left: 15px;
+}
+
+#detailcolumn {
+    padding: 10px;
+    text-align: center;
+    width: 40%;
+}
+
+    #detailcolumn table tr td {
+        border: none;
+    }
+
+.details {
+    text-align: center;
+    font-size: 12px;
+}
+
+.time {
+    font-family: Arial, Helvetica, serif;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+#buttoncolumn {
+    width: 10%;
+}
+
+#selection {
+    background: #d93434;
+    background-image: -webkit-linear-gradient(top, #d93434, #b82b2b);
+    background-image: -moz-linear-gradient(top, #d93434, #b82b2b);
+    background-image: -ms-linear-gradient(top, #d93434, #b82b2b);
+    background-image: -o-linear-gradient(top, #d93434, #b82b2b);
+    background-image: linear-gradient(to bottom, #d93434, #b82b2b);
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    border-radius: 5px;
+    border: none;
+    font-family: Georgia;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+    #selection:hover {
+        background: red;
+    }
+
+#logo {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/AirAsia_New_Logo.svg/1200px-AirAsia_New_Logo.svg.png");
+}
+
+.searchresult {
+    background-color: rgba(230, 230, 230, 0.9);
+}
+
+.airlogo {
+    width: 50px;
+    height: 50px;
+}

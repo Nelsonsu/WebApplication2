@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "testing";
+}
+
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/Content/testing.css">
+</head>
+<body>
+    <h4>Customers</h4>
+    <hr />
+    <div class="searchresult">
+        
+
+
+
+    </div>
+        <button type="button" id="add-order">Load the orders</button>
+
+
+        <script>
+            var data = [{
+                "order": {
+                    "fromtime": "10.30",
+                    "reachtime": "21.30",
+                    "fromloc": "Kuala Lumpur",
+                    "toloc": "Melbourne",
+                    "flightduration": "7h30min",
+                    "price": "$400",
+                    "aircID": "M110"
+                }
+            },
+                {
+                    "order": {
+                        "fromtime": "0.30",
+                        "reachtime": "8.30",
+                        "fromloc": "Kuala Lumpur",
+                        "toloc": "Melbourne",
+                        "flightduration": "8h00min",
+                        "price": "$480",
+                        "aircID": "AA111"
+                    }
+                },
+                {
+                    "order": {
+                        "fromtime": "5.30",
+                        "reachtime": "13.00",
+                        "fromloc": "Kuala Lumpur",
+                        "toloc": "Melbourne",
+                        "flightduration": "7h30min",
+                        "price": "$500",
+                        "aircID":"Eva111"
+                    }
+                }]
+
+            $("#add-order").one("click", function () {
+                var searchresult = $(".searchresult");
+
+                $.each(data, function (i, order) {
+                    searchresult.append("<table><tr><td id='firstcolumn'><img class='airlogo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/AirAsia_New_Logo.svg/1200px-AirAsia_New_Logo.svg.png'> </td><td id='detailcolumn'><table><tr class='time' id='distancetime'><td>" + data[i].order.fromtime + "</td><td>&rArr;</td><td>" + data[i].order.reachtime + "</td></tr><tr class='details' id='firstdetail'><td>" + data[i].order.fromloc + "</td><td>to</td><td>" + data[i].order.toloc + "</td></tr></table></td><td id='detailcolumn'><table><tr class='time' id='durationtime'><td>" + data[i].order.flightduration + "</td><td>Direct</td></tr><tr class='details' id='thirddetail'><td>Meal: Not included</td><td class='time'>" + data[i].order.price + "</td></tr><tr class='details' id='fourthdetail'><td>Cabin baggage: 1 x 7kg</td><td class='time'>" + data[i].order.aircID +"</td></tr></table></td><td id='buttonscolumn'> <button id='selection'>Select</button></td></tr></table >");
+                });
+            });
+
+        </script>
+</body>
+</html>

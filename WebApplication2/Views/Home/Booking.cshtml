@@ -1,0 +1,67 @@
+﻿@model WebApplication2.Models.FlightPassenger
+@{
+    ViewBag.Title = "Booking";
+}
+<a>@ViewBag.User</a>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="~/Content/booking.css">
+</head>
+<h1><a class="headinglink" href="/Home/Homepage">UIA Flight</a></h1>
+<body class="bg" onload="checkuser()">
+    <div class="horizontalTab">
+        <form method="post" action="/Home/InsertBook">
+            <div class="registerheader">
+                <p><b>Enter Passenger Detail</p>
+            </div>
+            @Html.TextBoxFor(x=>x.Flightsid1,  new { @Value = ViewBag.Flight1, Class ="hiden"})
+            @Html.TextBoxFor(x=>x.Flightid2, new { @Value = ViewBag.Flight2, Class = "hiden" })
+            <div class="inputs">
+                <p>First Name: </p>
+                @Html.TextBoxFor(x => x.Firstname)
+                <div id="clear"></div>
+                @Html.ValidationMessageFor(x => x.Firstname)
+            </div>
+            <div class="inputs">
+                <p>Last Name: </p>
+                @Html.TextBoxFor(x => x.Lastname)
+                <div id="clear"></div>
+                @Html.ValidationMessageFor(x => x.Lastname)
+            </div>
+            <div id="clear"></div>
+            <div class="email">
+                <p>Passport : </p>
+                @Html.TextBoxFor(x => x.Passport)
+                <div id="clear"></div>
+                @Html.ValidationMessageFor(x => x.Passport)
+            </div>
+            <div id="clear"></div>
+            <div class="inputs">
+                <p>Age : </p>
+                @Html.DropDownListFor(x => x.Age, Enumerable.Range(1,99).Select(i => new SelectListItem { Text = i.ToString(), Value = i.ToString() }), new { Class="inputs"})
+                <div id="clear"></div>
+                @Html.ValidationMessageFor(x => x.Age)
+            </div>
+            <div class="inputs">
+                <p>Gender : </p>
+                @Html.DropDownListFor(x => x.Gender, new SelectList(new[] { "Male", "Female" }))
+                <div id="clear"></div>
+                @Html.ValidationMessageFor(x => x.Gender)
+            </div>
+            <div id="clear"></div>
+            <div class="email">
+                <p>Email : </p>
+                @Html.TextBoxFor(x => x.Email, new { id="userlinks", name="userlinks", @readonly = "readonly" })
+                <div id="clear"></div>
+                <br />
+            </div>
+            <div id="clear"></div>
+            <br />
+            <a id="buttonscolumn"><button class="btn">Book Now</button></a>
+            <br />
+            <br />
+        </form>
+    </div>
+    <script src="~/Scripts/booking.js"></script>
+</body>
+

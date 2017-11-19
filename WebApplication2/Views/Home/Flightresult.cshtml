@@ -1,0 +1,87 @@
+﻿@using WebApplication2.Models;
+
+@model IEnumerable<Flightmodel>
+@{
+    ViewBag.Title = "Flightresult";
+}
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<title>UIA Flight</title>
+<link rel="stylesheet" href="~/Content/mainmenu.css">
+<link rel="stylesheet" href="~/Content/flightresult.css">
+<body class="bg" onload="checkuser()">
+    <a class="links" id="registerlinks" href="/Home/Register/">Register</a>
+    <a class="links" id="loginlinks" href="/Home/Login">Login</a>
+    <a class="links" id="logoutlinks" href="#" onclick="logout()" style="display:none">Logout</a>
+    <a class="links" id="userlinks" href="#" onclick="viewdetail()" style="display:none"></a>
+    <h1>Flight Ticket Booking</h1>
+    <div class="horizontalTab">
+        <div class="firstflight">
+            <img class="fflocation" style="width:20px; height:20px;" src="http://www.clker.com/cliparts/7/b/5/8/1194989102380326948aiga_departing_flights_.svg.hi.png">
+            <a class="fflocation"> @ViewBag.Fromwhr</a>
+            <a class="fflocation"> to</a>
+            <a class="fflocation"> @ViewBag.Towhr</a>
+            <a class="ffdates"> @ViewBag.Dates</a>
+            <a style="display:none"> @ViewBag.Returns</a>
+            <div id="clear"></div>
+        </div>
+        @foreach (Flightmodel flightmodel in @Model)
+        {
+            <div class="searchresult">
+                <table>
+                    <tr>
+                        <td id="firstcolumn"><img class="airlogo" src="@flightmodel.AirlineLogo"> </td>
+                        <td id="detailcolumn">
+                            <table>
+                                <tr class="time">
+                                    <td>@flightmodel.FromTime </td>
+                                    <td>&rArr;</td>
+                                    <td>@flightmodel.ToTime </td>
+                                </tr>
+                                <tr class="details">
+                                    <td> @flightmodel.FromLocation </td>
+                                    <td>to</td>
+                                    <td>@flightmodel.ToLocation </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td id="detailcolumn">
+                            <table>
+                                <tr class="time">
+                                    <td>@flightmodel.Duration </td>
+                                    <td>Direct </td>
+                                </tr>
+                                <tr class="details">
+                                    <td>Meal: Not included</td>
+                                    <td class="time">$@flightmodel.Price</td>
+                                </tr>
+                                <tr class="details">
+                                    <td>Cabin baggage: 1 x 7kg</td>
+                                    <td class="time">@flightmodel.AircraftID</td>
+                                </tr>
+                            </table>
+                        </td>
+
+                        <td id="buttonscolumn"> @Html.ActionLink("Select", "BackFlightresult", "Home", new { id =@flightmodel.FlightID, fromplace=flightmodel.ToLocation, toplace=flightmodel.FromLocation, returntime = ViewBag.Returns}, new { Class = "selection"})</td>
+                    </tr>
+
+                </table>
+            </div>
+        }
+       
+        <div id="footer">
+            <p id="agileinfo">
+                &copy; 2017 Flight Ticket Booking . All Rights Reserved |
+                <a href="/Home/About"> About US</a> |
+                <a href="/Home/Contact"> Contact US </a> |
+                Design by Nelson
+            </p>
+        </div>
+    </div>
+
+    <script src="~/Scripts/javascript.js"></script>
+
+</body>
+
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e788a79d60c645e5841d38f875b5938e" Name="Diagram1">
+        <EntityTypeShape EntityType="UIADbModel.Aircraft" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UIADbModel.Airline" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UIADbModel.Class" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="UIADbModel.Customer" Width="1.5" PointX="7.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UIADbModel.Farebase" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UIADbModel.Flight" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UIADbModel.Passenger" Width="1.5" PointX="7.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="UIADbModel.Reservation" Width="1.5" PointX="7.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UIADbModel.SeatGroup" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UIADbModel.SeatLabel" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UIADbModel.Ticket" Width="1.5" PointX="10" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UIADbModel.FarebaseGroup" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="UIADbModel.PassengerSeat" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UIADbModel.Route" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <AssociationConnector Association="UIADbModel.FK__Aircraft__airlID__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="UIADbModel.FK__Aircraft__sgID__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="UIADbModel.FK__Flight__aircID__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="UIADbModel.FK__Farebase__airlID__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="UIADbModel.FK__Farebase__claID__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="UIADbModel.FK__SeatLabel__claID__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="UIADbModel.FK__FarebaseGr__fbID__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="UIADbModel.FK__Ticket__passport__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="UIADbModel.FK__SeatLabel__sgID__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="UIADbModel.FK__Passenger__seatI__6FE99F9F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

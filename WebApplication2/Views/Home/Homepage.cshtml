@@ -1,0 +1,84 @@
+﻿@model WebApplication2.Models.Flightinput
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function getname() {
+            return $("#userlinks").val();
+        }
+    </script>
+</head>
+<title>UIA Flight (US)</title>
+<link rel="stylesheet" href="~/Content/mainmenu.css">
+<body class="bg" onload="checkuser()">
+    <a class="links" id="registerlinks" href="/Home/Register/">Register</a>
+    <a class="links" id="loginlinks" href="/Home/Login">Login</a>
+    <a class="links" id="logoutlinks" href="#" onclick="logout()" style="display:none">Logout</a>
+    <a class="links" id="userlinks" href="#" onclick="viewdetail()" style="display:none"></a>
+        <h1>UIA Flight (US)</h1>
+        <div class="horizontalTab">
+            <div id="taber">
+                <div class="flight-type">
+                    <button id="roundtripbtn" onclick="roundtripshow()"><span>Round Trip</span></button>
+                    <button id="onewaybtn" onclick="onewayshow()">
+                        <span>One way</span>
+                    </button>
+                </div>
+            </div>
+            <form method="post" action="/Home/Flightresult/">
+                <div id="containerbg">
+                    <div class="firstrow">
+                        <div class="location">
+                            <h3>From</h3>
+                            @Html.DropDownListFor(y => y.FromWhere, new SelectList(new[] { "Kuala Lumpur", "Beijing", "Melbourne", "Shanghai" }), new { Class = "city1", placeholder = "Type Departure City", required = "" })
+                        </div>
+                        <div class="location">
+                            <h3>To</h3>
+                            @Html.DropDownListFor(y => y.ToWhere, new SelectList(new[] { "Beijing", "Kuala Lumpur", "Melbourne", "Shanghai" }), new { Class = "city1", placeholder = "Type Departure City", required = "" })
+                        </div>
+                        <div id="clear"></div>
+                    </div>
+                    <div class="secondrow">
+                        <div id="depart">
+                            <h3>Depart</h3>
+                            @Html.EditorFor(y => y.DepartDate, new { @type = "date" })
+                        </div>
+                        <div id="roundtrip">
+                            <div id="return">
+                                <h3>Return</h3>
+                                @Html.EditorFor(y => y.ReturnDate, new { @type = "date" })
+                            </div>
+                        </div>
+                        <div class="class">
+                            <h3>Class</h3>
+                            @Html.DropDownListFor(y => y.Seatclass, new SelectList(new List<Object> { new { value=0, text="Economy"},
+                            new{value=1, text = "Premium Economy"},
+                            new{value=2, text = "Business"},
+                            new{value=3, text="First Class"}}, "value", "text", 0), new { id = "w3_country1" })
+                        </div>
+                        <div id="clear"></div>
+                    </div>
+                    <div id="clear"></div>
+                    <br />
+                    <div class="sixthrow">
+                        <button class="btn">Search Flight</button>
+                    </div>
+                    <br />
+                </div>
+            </form>
+            <div id="footer">
+                <p id="agileinfo">
+                    &copy; 2017 Flight Ticket Booking . All Rights Reserved |
+                    <a href="/Home/About"> About US</a> |
+                    <a href="/Home/Contact"> Contact US </a> |
+                    Design by Nelson
+                </p>
+            </div>
+        </div>
+
+        <script src="~/Scripts/javascript.js"></script>
+
+</body>

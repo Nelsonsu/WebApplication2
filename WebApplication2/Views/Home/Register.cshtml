@@ -1,0 +1,58 @@
+﻿@model WebApplication2.Models.Customermodel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<head>
+    <link rel="stylesheet" href="~/Content/register.css">
+</head>
+<h1><a class="headinglink" href="/Home/Homepage">Flight Ticket Booking</a></h1>
+<body class="bg">
+    <div class="horizontalTab">
+        <form method="post" action="/Home/Registeraction">
+            <div class="registerheader">
+                <p><b>Registeration</p>
+            </div>
+            <div class="inputs">
+                <p>First Name: </p>
+                @Html.TextBoxFor(x => x.FirstName)
+                <div id="clear"></div>
+                @Html.ValidationMessageFor(x=>x.FirstName)
+            </div>
+            <div class="inputs">
+                <p>Last Name: </p>
+                @Html.TextBoxFor(x => x.LastName)
+                <div id="clear"></div>
+                @Html.ValidationMessageFor(x => x.LastName)
+            </div>
+            <div id="clear"></div>
+            <div class="inputs">
+                <p>Password : </p>
+                @Html.PasswordFor(x => x.Password)
+                <div id="clear"></div>
+                @Html.ValidationMessageFor(x => x.Password)
+            </div>
+            <div class="inputs">
+                <p>Confirm Password : </p>
+                @Html.PasswordFor(x => x.ConfirmPassword)
+                <div id="clear"></div>
+                @Html.ValidationMessageFor(x => x.ConfirmPassword)
+            </div>
+            <div id="clear"></div>
+            <div class="email">
+                <p>Email : </p>
+                @Html.TextBoxFor(x=>x.Email)
+                <div id="clear"></div>
+                @Html.ValidationMessageFor(x => x.Email)
+                <br/>
+            </div>
+            <div id="clear"></div>
+            <br />
+            <button class="btn" name="registerbtn">Register</button>
+            <br />
+            <br />
+            </form>
+    </div>
+</body>
+
+

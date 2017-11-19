@@ -1,0 +1,40 @@
+﻿@model WebApplication2.Models.Customermodel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="~/Content/login.css">
+    <h1><a class="headinglink" href="/Home/Homepage">Flight Ticket Booking</a></h1>
+</head>
+
+<body class="bg">
+    <div class="horizontalTab"> 
+             
+            <div class="signinheader">
+                <p><b>Sign In</p>
+            </div>
+            <div class="emailaddress">
+                <p>Email Address : </p>
+                <input id="emailaddressinput" name="emailaddressinput"type="text"></input>
+            </div>
+            <div class="password">
+                <p>Password : </p>
+                <input type="password"id="passwordinput" name="passwordinput"></input>
+            </div>
+            <br />
+            <button class="btn" id="loginbtn" onclick="loginact()">Login</button>
+        <br />   
+        <div class="errors" style="display:none;"> 
+            <br />
+            <label style="color:red"> Incorrect Login Credential</label>
+
+        </div>
+        <br />
+    </div>
+    <script src="~/Scripts/login.js"></script>
+</body>
+
+
